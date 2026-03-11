@@ -60,6 +60,7 @@ class EstadoEmpresa(enum.Enum):
 # Classes de Orientação a Objeto
 #### SISTEMA #####
 class Usuario(db.Model):
+
     __tablename__ = 'usuarios'
 
     usuario_id = db.Column(db.Integer, primary_key = True)
@@ -94,6 +95,7 @@ class Empresa(db.Model):
 #### INFORMAÇÕES SOBRE A FROTA ####
 
 class Veiculo(db.Model):
+
     __tablename__ = 'veiculos'
 
     placa = db.Column(db.String(7), primary_key = True, index = True)
