@@ -12,11 +12,49 @@ class StatusVeiculo(enum.Enum):
     VENDIDO = "Vendido"
     INATIVO = "Inativo"
 
-class TipoCombustível(enum.Enum):
+class TipoCombustivel(enum.Enum):
     GASOLINA = "Gasolina"
     ETANOL = "Etanol"
     DIESEL = "Diesel"
     GNV = "GNV"
+
+class CategoriaCNH(enum.Enum):
+    A = "A"
+    B = "B"
+    C = "C"
+    D = "D"
+    E = "E"
+    AB = "AB"
+    AC = "AC"
+    AD = "AD"
+    AE = "AE"
+
+class StatusMotorista(enum.Enum):
+    ATIVO = 'Ativo'
+    INATIVO = 'Inativo'
+    EM_VIAGEM = 'Em Viagem'
+    FERIAS = 'Férias'
+    AFASTADO = 'Afastado/Licença'
+
+class StatusPneu(enum.Enum):
+    NOVO = 'Novo'
+    MEIO = 'Meio de Vida/Uso'
+    VELHO = 'Velho/Usado'
+
+class PrioridadeOrdemServico(enum.Enum):
+    EMERGENCIAL = 'Emergencial/Critica' #Parada Imediata
+    ALTA = 'Alta' #Risco de Segurança
+    MEDIA = "Média" #Manutenção Programada Necessária
+    BAIXA = 'Baixa' #Preventiva Agendada e/ou Estética
+
+class TipoManutencao(enum.Enum):
+    PREVENTIVA = 'Preventiva'
+    CORRETIVA = 'Corretiva'
+    PREDITIVA = 'Preditiva'
+
+class EstadoEmpresa(enum.Enum):
+    SP = 'São Paulo'
+    BA = 'Bahia'
 
 
 # Classes de Orientação a Objeto
