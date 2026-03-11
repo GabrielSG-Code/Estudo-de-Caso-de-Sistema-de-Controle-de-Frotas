@@ -1,19 +1,39 @@
 from app import create_app
-from app.models import db, Veiculo
+from app.models import db, Veiculo, TipoCombustível, StatusVeiculo
 
 app = create_app()
 
 def popular():
     with app.app_context():
-        v1 = Veiculo(modelo='Chevrolet Onix', placa='ABC-1E23', status='Disponível')
-        v2 = Veiculo(modelo='Volkswagen Gol', placa='XYZ-5678', status='Manutenção')
-        v3 = Veiculo(modelo='Fiat Fiorino', placa='KLU-1478', status='Disponível')
+        v1 = Veiculo(
+            placa='ABC1E23', 
+            modelo='Chevrolet Onix', 
+            marca='Chevrolet',
+            ano=2023,
+            tipoVeiculo='Passeio',
+            combustivel=TipoCombustível.GASOLINA,
+            Km_Atual=15000.0,
+            Km_UltimaTrocaOleo=10000.0,
+            Km_UltimaRevisao=10000.0,
+            status=StatusVeiculo.ATIVO)
+        
+        v2 = Veiculo(
+            placa='XYZ5678', 
+            modelo='Volkswagen Gol', 
+            marca='Volkswagen',
+            ano=2021,
+            tipoVeiculo='Passeio',
+            combustivel=TipoCombustível.ETANOL,
+            Km_Atual=45000.0,
+            Km_UltimaTrocaOleo=40000.0,
+            Km_UltimaRevisao=40000.0,
+            status=StatusVeiculo.MANUTENCAO)
+
 
         db.session.add(v1)        
         db.session.add(v2)
-        db.session.add(v3)
 
-        db.session.commit
+        db.session.commit()
 
         print("Banco de dados populado com sucesso!")
 
